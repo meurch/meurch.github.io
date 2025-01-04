@@ -1,30 +1,21 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-    const videoCloud = document.getElementById("video-cloud");
-    const modal = document.getElementById("modal");
-    const closeButton = document.querySelector(".close-button");
-    const videoFrame = document.getElementById("video-frame");
+document.addEventListener('DOMContentLoaded', () => {
+    const videoCloud = document.getElementById('video-cloud');
+    let rotationX = 0;
+    let rotationY = 0;
+    
+    // Обработчик движения мыши
+    videoCloud.addEventListener('mousemove', (event) => {
+        const rect = event.target.getBoundingClientRect();
+        rotationX = -(event.clientY - rect.top - rect.height / 2) * 0.01;
+        rotationY = (event.clientX - rect.left - rect.width / 2) * 0.01;
+        videoCloud.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    });
 
-    // Функция для открытия модального окна и загрузки видео
-    function openModal(videoId) {
-        modal.classList.remove("hidden");
-        videoFrame.src = `https://rutube.ru/play/embed/${videoId}`;
-    }
-
-    // Функция для закрытия модального окна
-    function closeModal() {
-        modal.classList.add("hidden");
-        videoFrame.src = "";
-    }
-
-    // Обработчик события для кнопки закрытия
-    closeButton.addEventListener("click", closeModal);
-
-    // Обработчики событий для всех кнопок видео
-    videoCloud.querySelectorAll("button").forEach(button => {
-        button.addEventListener("click", () => {
-            const videoId = button.dataset.videoId;
-            openModal(videoId);
+    // Обработчик кликов по элементам
+    videoCloud.querySelectorAll('.video-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const url = item.dataset.videoUrl;
+            window.open(url, '_blank'); // Откроет видео в новой вкладке
         });
     });
 });
