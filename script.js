@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обработчик движения мыши
     videoCloud.addEventListener('mousemove', (event) => {
         const rect = event.target.getBoundingClientRect();
-        rotationX = -(event.clientY - rect.top - rect.height / 2) * 0.01;
-        rotationY = (event.clientX - rect.left - rect.width / 2) * 0.01;
+        rotationX = -(event.clientY - rect.top - rect.height / 2) * 0.02; // Увеличение скорости вращения по оси X
+        rotationY = (event.clientX - rect.left - rect.width / 2) * 0.005; // Уменьшение скорости вращения по оси Y
         videoCloud.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
     });
 
