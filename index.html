@@ -40,19 +40,27 @@
     p {
 	text-indent: 20px;
     }
-    .image-container { display: flex; justify-content: center; margin-top: 20px; } 
     .responsive-image { height: 350px; border-radius: 4px; }
+    .image-container { display: flex; justify-content: center; margin-top: 20px; position: relative; width: 100%; overflow: hidden; } 
+    .main-image { display: block; max-width: 100%; height: auto; } 
+    .blurry-image { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.05); filter: blur(10px); 
+	     /* Задаем степень размытия */ 
+	     z-index: -1; /* Отправляем размытое изображение назад */ width: 110%; 
+	     /* Делаем немного шире, чтобы избежать белых краев */ 
+	     height: auto; 
+	}
 
 </style>
             
 <body>
 <main role="main">
     <br/>
-    
+
     <div class="image-container">
         <a href="#">
-            <img src="https://meurch.ru/img/Meurch.jpg" alt="Описание изображения" class="responsive-image">
+            <img src="https://meurch.ru/img/Meurch.jpg" alt="Описание изображения" class="main-image">
         </a>
+        <img src="https://meurch.ru/img/Meurch.jpg" alt="Размытая версия изображения" class="blurry-image">
     </div>
   
     <br/>
