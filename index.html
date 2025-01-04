@@ -45,7 +45,7 @@
 	/* Основной контейнер для изображения */ 
 	.image-container { display: flex; justify-content: center; /* Центрируем изображение горизонтально */ align-items: center; /* Центрируем изображение вертикально */ margin-top: 20px; position: relative; width: 100%; overflow: hidden; } 
 	/* Основное изображение */ 
-	.main-image { display: block; width: 300px; /* Фиксируем ширину основного изображения */ height: auto; } 
+	.main-image { display: block; opacity: 0; width: 300px; /* Фиксируем ширину основного изображения */ height: auto; } 
 	/* Размытое изображение */ 
 	.blurry-image { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.05); filter: blur(10px); z-index: 0; /* Отправляем размытое изображение назад */ width: 100%; /* Ширина размытого изображения равна ширине контейнера */ height: auto; }
 
@@ -54,12 +54,12 @@
 <body>
 <main role="main">
 
-        <div class="image-container">
-            <a href="#" style="z-index: 1;">
-                <img src="https://meurch.ru/img/Meurch.jpg" alt="Описание изображения" class="main-image">
-            </a>
-            <img src="https://meurch.ru/img/Meurch.jpg" alt="Размытая версия изображения" class="blurry-image">
-        </div>
+	<div class="image-container">
+	    <a href="#" style="z-index: 1;">
+		<img src="https://meurch.ru/img/Meurch.jpg" alt="Описание изображения" class="main-image">
+	    </a>
+	    <img src="https://meurch.ru/img/Meurch.jpg" alt="Размытая версия изображения" class="blurry-image">
+	</div>
   
     <br/>
 
