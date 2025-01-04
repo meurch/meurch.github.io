@@ -8,6 +8,8 @@
     <meta property="og:image" content="https://meurch.ru/img/covers_mini/Вискас.jpg">
     <meta property="og:image:width" content="968">
     <meta property="og:image:height" content="504">
+    <!-- Подключение стилей UIkit -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
 </head>
 <style>
     .ramka{
@@ -353,5 +355,12 @@ svg{font-weight:bold;max-width:600px;height:auto;font-family: Scriptorama; color
     VK.Widgets.Playlist("vk_playlist_14285579_80549028", 14285579, 80549028,'ef0fcf2265cc992fd2');
   }());
 </script>
+
+<!-- Подключение скриптов UIkit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+
+<!-- Инициализация слайдера -->
+<script> document.addEventListener('DOMContentLoaded', function() { UIkit.slideshow('.uk-slideshow', {animation: 'fade'}); }); </script>
 
 <?php include 'footer.html';?>
